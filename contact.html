@@ -9,7 +9,6 @@
   <meta name="description" content="" />
   <meta name="keywords" content="bootstrap, bootstrap4" />
 
-
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -98,7 +97,10 @@
   <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
     <div class="container">
-      <a class="navbar-brand" href="index.html">Furni<span>.</span></a>
+      <!-- Substituindo o nome por uma imagem -->
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="Logo" style="width: 120px; height: auto;">
+      </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -147,7 +149,7 @@
       <div class="block">
         <div class="row justify-content-center">
           <div class="col-md-8 col-lg-8 pb-4">
-            <form onsubmit="return showMessage()">
+            <form id="contactForm" onsubmit="return validateForm()">
               <div class="row">
                 <div class="col-6">
                   <div class="form-group">
@@ -242,7 +244,18 @@
   <script src="js/custom.js"></script>
 
   <script>
-    function showMessage() {
+    function validateForm() {
+      var fname = document.getElementById('fname').value;
+      var lname = document.getElementById('lname').value;
+      var email = document.getElementById('email').value;
+      var message = document.getElementById('message').value;
+      
+      // Verificar se todos os campos estão preenchidos
+      if (fname == "" || lname == "" || email == "" || message == "") {
+        alert("Por favor, preencha todos os campos.");
+        return false;
+      }
+      
       // Mostrar o Modal de Sucesso
       var myModal = new bootstrap.Modal(document.getElementById('successModal'));
       myModal.show();
