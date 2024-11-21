@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Untree.co">
+  <link rel="shortcut icon" href="images/logo.png">
+
+  <meta name="description" content="" />
+  <meta name="keywords" content="bootstrap, bootstrap4" />
+
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="css/tiny-slider.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <title>Contato - Mensagem Enviada</title>
+
+  <style>
+    body {
+      background-color: #474646;
+      color: #dcdcdc;
+    }
+
+    .navbar-dark {
+      background-color: #380e5a !important;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+      color: #dcdcdc;
+    }
+
+    .navbar-dark .navbar-nav .nav-link:hover {
+      color: #ffffff;
+    }
+
+    .footer-section {
+      background-color: #474646;
+      color: #dcdcdc;
+    }
+
+    .footer-section a {
+      color: #dcdcdc;
+    }
+
+    .footer-section a:hover {
+      color: #ffffff;
+    }
+
+    h1, h2, h3 {
+      color: #ffffff;
+    }
+
+    .btn {
+      color: #ffffff;
+      background-color: #007bff;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .hero {
+      background-color: #380e5a;
+      color: #ffffff;
+      padding: 40px 0;
+    }
+
+    .custom-section {
+      padding: 40px 20px;
+      background-color: #5a5a5a;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .custom-section h2 {
+      color: #ffffff;
+    }
+
+    /* Modal Styles */
+    .modal-content {
+      background-color: #333;
+      color: #fff;
+    }
+
+    /* Toast Styles */
+    .toast-body {
+      background-color: #28a745;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Start Header/Navigation -->
+  <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Furni<span>.</span></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsFurni">
+        <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li><a class="nav-link" href="shop.html">Produtos</a></li>
+          <li><a class="nav-link" href="about.html">Sobre</a></li>
+          <li><a class="nav-link" href="services.html">Serviços</a></li>
+          <li><a class="nav-link" href="blog.html">Galeria</a></li>
+          <li class="active"><a class="nav-link" href="contact.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </nav>
+  <!-- End Header/Navigation -->
+
+  <!-- Start Hero Section -->
+  <div class="hero">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-lg-5">
+          <div class="intro-excerpt">
+            <h1>Contato</h1>
+            <p class="mb-4">Envie sua avaliação</p>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="hero-img-wrap">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Hero Section -->
+
+  <!-- Start Contact Form -->
+  <div class="untree_co-section">
+    <div class="container">
+
+      <div class="block">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-8 pb-4">
+            <form onsubmit="return showMessage()">
+              <div class="row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label class="text-black" for="fname">Primeiro nome</label>
+                    <input type="text" class="form-control" id="fname">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <label class="text-black" for="lname">Ultimo Nome</label>
+                    <input type="text" class="form-control" id="lname">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="text-black" for="email">Email</label>
+                <input type="email" class="form-control" id="email">
+              </div>
+
+              <div class="form-group mb-5">
+                <label class="text-black" for="message">Mensagem de Avaliação</label>
+                <textarea name="" class="form-control" id="message" cols="30" rows="5"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary-hover-outline">Enviar Mensagem</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Contact Form -->
+
+  <!-- Modal de Sucesso -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="successModalLabel">Mensagem Enviada!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Sua mensagem foi enviada com sucesso! Agradecemos pelo seu feedback.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast de Sucesso -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="successToast" class="toast" style="display: none;">
+      <div class="toast-header">
+        <strong class="me-auto">Mensagem Enviada</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Sua mensagem foi enviada com sucesso! Agradecemos pelo seu feedback.
+      </div>
+    </div>
+  </div>
+
+  <!-- Start Footer Section -->
+  <footer class="footer-section">
+    <div class="border-top copyright">
+      <div class="row pt-4">
+        <div class="col-lg-6">
+          <p class="mb-2 text-center text-lg-start">Nicolas M 2024- &copy Todos os direitos reservados<br>Trabalho acadêmico sem fins lucrativos</p>
+        </div>
+
+        <div class="col-lg-6 text-center text-lg-end">
+          <ul class="list-unstyled d-inline-flex ms-auto">
+            <li class="me-4"><a href="#">Termos &amp; Condições</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="position: fixed; bottom: 10px; right: 10px;">
+        <a href="#">
+          <img src="images/logo.png" alt="Voltar ao topo" style="width: 60px; height:60px;">
+        </a>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer Section -->
+
+  <!-- Scripts -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/tiny-slider.js"></script>
+  <script src="js/custom.js"></script>
+
+  <script>
+    function showMessage() {
+      // Mostrar o Modal de Sucesso
+      var myModal = new bootstrap.Modal(document.getElementById('successModal'));
+      myModal.show();
+      
+      // Mostrar o Toast de Sucesso
+      var toast = new bootstrap.Toast(document.getElementById('successToast'));
+      toast.show();
+      
+      return false; // Impede o envio real para demonstração
+    }
+  </script>
+
+</body>
+</html>
